@@ -90,10 +90,13 @@ const InputInvalid = () => {
 const DomainList = ({data}: {data: string}) => {
 
   const d = new DOMParser();
-  const r= d.parseFromString(data, 'application/xml');
-  const domainlist = r.documentElement.querySelectorAll("Domains")
+  const r = d.parseFromString(data, 'application/xml');
+  const domainlist = r.documentElement.querySelectorAll("Domain")
+  const listmap: string = [...domainlist].map(e => e.innerHTML).join(' ');
+
+
   return (
-    <>{JSON.stringify(domainlist)}</>
+    <>{listmap}</>
   )
 
 
