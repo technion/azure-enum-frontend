@@ -72,7 +72,7 @@ const EnumerateOutput = ({lookup}: {lookup: string}) => {
   }
 
   return (
-    <>{JSON.stringify(data)}</>
+    <DomainList data={data.output} />
   )
 }
 
@@ -86,4 +86,15 @@ const InputInvalid = () => {
     </>
   )
 }
- 
+
+const DomainList = ({data}: {data: string}) => {
+
+  const d = new DOMParser();
+  const r= d.parseFromString(data, 'application/xml');
+  const domainlist = r.documentElement.querySelectorAll("Domains")
+  return (
+    <>{JSON.stringify(domainlist)}</>
+  )
+
+
+}
