@@ -53,12 +53,12 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                 </svg>
                 Just enter one valid domain in the form below.
               </dt>
-              <dd className="inline"> Note that this interface aggressively rate limits usage.</dd>
+              <dd className="inline"> Note that this interface aggressively limits usage.</dd>
             </div>
           </dl>
         </div>
       </div>
-      <img src={heroURL} alt="Definitely not AI generated" className="w-[48rem] rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0" height="1024" width="1024" />
+      <img src={heroURL} alt="Why yes, I did use the first image the AI generator spat out, how did you know?" className="w-[48rem] rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0" height="1024" width="1024" />
     </div>
   </div>
 </div>
