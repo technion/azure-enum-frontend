@@ -4,6 +4,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import App from "./App.tsx";
 import "./index.css";
 
+import heroURL from './assets/really useful AI generated hero image.png';
+
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -15,7 +18,7 @@ const queryClient = new QueryClient({
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <div className="overflow-hidden bg-white py-24 sm:py-32">
+    <div className="overflow-hidden bg-white py-24 sm:py-8">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
       <div className="lg:pr-8 lg:pt-4">
@@ -55,7 +58,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           </dl>
         </div>
       </div>
-      <img src="https://repository-images.githubusercontent.com/130268121/b4fd5300-b585-11ea-8718-1e141e78842e" alt="Product screenshot" className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0" width="2432" height="1442" />
+      <img src={heroURL} alt="Definitely not AI generated" className="w-[48rem] rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0" height="1024" width="1024" />
     </div>
   </div>
 </div>
