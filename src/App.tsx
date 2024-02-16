@@ -50,6 +50,9 @@ const EnumerateOutput = ({lookup}: {lookup: string}) => {
         headers: { "Content-Type": "application/json"},
         body: lookup
       });
+      if (!response.ok) {
+        throw new Error('Network response was not ok')
+      }
       return await response.json();
     }
   });
