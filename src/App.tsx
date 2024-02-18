@@ -88,16 +88,23 @@ const InputInvalid = () => {
   )
 }
 
-const DomainList = ({data}: {data: string}) => {
+import { trustedTypes } from 'trusted-types';
 
-  const d = new DOMParser();
-  const r = d.parseFromString(data, 'application/xml');
-  const domainlist = r.documentElement.querySelectorAll("Domain")
-  const listmap: string = [...domainlist].map(e => e.innerHTML).join(' ');
+const DomainList = ({ data }: { data: string }) => {
+  // Technically untrusted data being parsed this way requires a Trusted Types policy.
+  
+  const safeXMLPolicy = trustedTypes.createPolicy("myEscapePolicy", {
+    createHTML: (string: string) => {
+      const d = new DOMParser();
+      // This is considered an untrusted XML parsing, but the document constructed is never directly rendered or called
+      const r = d.parseFromString(string, "application/xml");
+      const domainlist = r.documentElement.querySelectorAll("Domain");
+      // SAFETY: This whole function ends up using textContent() which is safe
+      return [...domainlist].map((e) => e.textContent).join(" ");
+    },
+  });
 
-  return (
-    <>{listmap}</>
-  )
+  const listmap: TrustedHTML = safeXMLPolicy.createHTML(data);
 
-
-}
+  return <>{listmap}</>;
+};
