@@ -35,7 +35,7 @@ function App() {
             type="text"
             id="domain"
             {...register("domainname", {
-              pattern: /^[0-9a-z-.]{5,64}$/,
+              pattern: /^[0-9A-Za-z-.]{5,64}$/,
               required: true,
             })}
             placeholder="lolware.net"
