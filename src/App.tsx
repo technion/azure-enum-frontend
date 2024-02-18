@@ -88,7 +88,7 @@ const InputInvalid = () => {
   )
 }
 
-import { trustedTypes } from 'trusted-types';
+//import { trustedTypes } from 'trusted-types';
 
 const DomainList = ({ data }: { data: string }) => {
   // Technically untrusted data being parsed this way requires a Trusted Types policy.
