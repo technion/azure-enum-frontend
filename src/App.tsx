@@ -96,7 +96,7 @@ const DomainList = ({ data }: { data: string }) => {
   const safeXMLPolicy = trustedTypes.createPolicy("myEscapePolicy", {
     createHTML: (string: string) => {
       const d = new DOMParser();
-      // This is considered an untrusted XML parsing, but the document constructed is never directly rendered or called
+      // This is considered an untrusted XML parsing, but the document constructed is never directly rendered or
       const r = d.parseFromString(string, "application/xml");
       const domainlist = r.documentElement.querySelectorAll("Domain");
       // SAFETY: This whole function ends up using textContent() which is safe
