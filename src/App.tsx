@@ -47,7 +47,7 @@ function App() {
             className="text-white bg-[#007bff] hover:bg-blue-600 font-semibold rounded-md text-sm px-4 py-2.5 w-full"
           />
         </form>
-        {errors.domainname && <InputInvalid />}
+        {errors.domainname?.type =="pattern" && <InputInvalid />}
         {domainName && (
           <EnumerateOutput
             lookup={JSON.stringify(domainName)}
