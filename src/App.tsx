@@ -39,6 +39,7 @@ function App() {
               required: true,
             })}
             placeholder="lolware.net"
+            autoCorrect="off"
             className="w-full rounded-md py-2.5 px-4 border text-sm outline-[#007bff]"
           />
           <input
