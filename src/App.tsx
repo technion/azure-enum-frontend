@@ -113,5 +113,6 @@ import { parseNodes } from "./parseXMLNodes.tsx"
 const DomainList = ({ data }: { data: string }) => {
   const listmap = parseNodes(data);
 
-  return <>{listmap}</>;
+  if (listmap === null) return null;
+  return <>{listmap.toString()}</>;
 };
