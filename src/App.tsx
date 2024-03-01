@@ -108,13 +108,10 @@ const InputInvalid = () => {
   );
 };
 
-const DomainList = ({ data }: { data: string }) => {
-  // This function is ultimately incompatible with Trusted Types, resulting in the feature's removal
+import { parseNodes } from "./parseXMLNodes.tsx"
 
-  const d = new DOMParser();
-  const r = d.parseFromString(data, "application/xml");
-  const domainlist = r.documentElement.querySelectorAll("Domain");
-  const listmap = [...domainlist].map((e) => e.textContent).join(" ");
+const DomainList = ({ data }: { data: string }) => {
+  const listmap = parseNodes(data);
 
   return <>{listmap}</>;
 };
