@@ -111,8 +111,8 @@ const InputInvalid = () => {
 import { parseNodes } from "./parseXMLNodes.tsx"
 
 const DomainList = ({ data }: { data: string }) => {
-  const listmap = parseNodes(data);
+  let listmap = JSON.parse(parseNodes(data));
+  listmap = listmap.map((n: string) => <div> {n}</div>);
 
-  if (listmap === null) return null;
-  return <>{listmap.toString()}</>;
+  return <>{listmap}</>;
 };
