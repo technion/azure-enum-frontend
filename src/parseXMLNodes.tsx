@@ -14,10 +14,10 @@ export const parseNodes = (data: string) => {
   // Safety: parseFromString hardcodes the XML type, which avoids all risks I've found
   // We then read nodes with textContent, which strips all tags
   if (parseXMLPolicy == undefined ) return JSON.stringify({}); // This can't happen due to the "tinyfill"
-  const trustedString = parseXMLPolicy.createHTML(data).toString();
+  const trustedString = parseXMLPolicy.createHTML(data);
   
   const d = new DOMParser();
-  const r = d.parseFromString(trustedString, "application/xml");
+  const r = d.parseFromString(trustedString as unknown as string, "application/xml");
   if (r.querySelector("parseerror")) {
     throw new Error("Invalid XML received from Endpoint");
   }
