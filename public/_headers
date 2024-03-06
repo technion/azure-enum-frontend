@@ -4,7 +4,7 @@
   X-Content-Type-Options: nosniff
   Permissions-Policy: interest-cohort=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self'; connect-src 'self' azure-enum-api.lolware.net; block-all-mixed-content; report-uri https://lolware.report-uri.com/r/d/csp/enforce
+  Content-Security-Policy: default-src 'self'; require-trusted-types-for 'script'; connect-src 'self' azure-enum-api.lolware.net; block-all-mixed-content; report-uri https://lolware.report-uri.com/r/d/csp/enforce
   Cross-Origin-Embedder-Policy: require-corp
   Cross-Origin-Opener-Policy: same-origin
   
