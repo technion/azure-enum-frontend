@@ -112,7 +112,14 @@ import { parseNodes } from "./parseXMLNodes.tsx"
 
 const DomainList = ({ data }: { data: string }) => {
   let listmap = JSON.parse(parseNodes(data));
-  listmap = listmap.map((n: string) => <div> {n}</div>);
+  listmap = listmap.map((n: string) => (
+    <div
+      key={n}
+      className="relative block rounded-lg bg-blue-300 p-4 text-base leading-5 text-white"
+    >
+      {n}
+    </div>
+  ));
 
-  return <>{listmap}</>;
+  return <div className="grid grid-cols-4 gap-4">{listmap}</div>;
 };
