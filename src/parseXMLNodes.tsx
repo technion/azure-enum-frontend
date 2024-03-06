@@ -1,7 +1,7 @@
 // Vite will force you to prepend the trustedTypes function with window. .. still unsure why
 // Below is the official tinyfill. Ignore typing since modern browsers will use the proper typed API anyway
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-if(typeof window.trustedTypes == 'undefined') window.trustedTypes={createPolicy:(_n: any, rules: any) => rules} as any;
+if(typeof window.trustedTypes == 'undefined') console.log("adding tinyfill");// window.trustedTypes={createPolicy:(_n: any, rules: any) => rules} as any;
 
 const parseXMLPolicy = window.trustedTypes?.createPolicy("myEscapePolicy", {
     // Safety: parseFromString hardcodes the XML type, which avoids all risks I've found
