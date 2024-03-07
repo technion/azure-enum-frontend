@@ -121,5 +121,5 @@ const DomainList = ({ data }: { data: string }) => {
     </div>
   ));
 
-  return <div className="my-10flex flex-wrap">{listmap}</div>;
+  return <div className="my-10 flex flex-wrap">{listmap}</div>;
 };
