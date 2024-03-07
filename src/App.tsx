@@ -115,11 +115,11 @@ const DomainList = ({ data }: { data: string }) => {
   listmap = listmap.map((n: string) => (
     <div
       key={n}
-      className="relative block rounded-lg bg-blue-300 p-4 text-base leading-5 text-white"
+      className="relative mx-3 block rounded-lg bg-blue-300 p-4 text-base leading-5 text-white"
     >
       {n}
     </div>
   ));
 
-  return <div className="my-10 mx-3 flex flex-wrap">{listmap}</div>;
+  return <div className="my-10flex flex-wrap">{listmap}</div>;
 };
